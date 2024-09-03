@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mondrian Project</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        min-width: 100vw;
+        min-height: 100vh;
+      }
+      ul {
+        list-style: none;
+        border-top: 9px solid rgb(44, 44, 44);
+        border-left: 9px solid rgb(44, 44, 44);
+      }
+      .container {
+        display: grid;
+        background-color: rgb(44, 44, 44);
+        grid-template-columns: 50px 70px 160px 110px 110px 155px 155px 130px 130px 110px 110px 110px 110px;
+        grid-template-rows: 60px 110px 110px 110px 110px 110px 110px 110px 110px 85px;
+        gap: 15px;
+        width: 1705px;
+        height: 1175px;
+      }
+      /* first row */
+      li {
+        box-shadow: rgba(0, 0, 0, 0.616) 3px 3px 5px;
+        border-radius: 3px;
+      }
+      li:first-child {
+        background-color: white;
+        grid-column: span 2;
+      }
+      li:nth-child(2) {
+        background-color: white;
+        grid-column: span 3;
+      }
+      li:nth-child(3) {
+        background-color: yellow;
+        grid-column: span 2;
+      }
+      li:nth-child(4) {
+        background-color: blue;
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      li:nth-child(5) {
+        background-color: yellow;
+        grid-column: span 1;
+      }
+      li:nth-child(6) {
+        background-color: black;
+        grid-column: span 1;
+      }
+      li:nth-child(7) {
+        background-color: white;
+        grid-column: span 2;
+      }
+      /* second row */
+
+      li:nth-child(8) {
+        background-color: white;
+        grid-column: span 1;
+        grid-row: span 2;
+      }
+      li:nth-child(9) {
+        background-color: red;
+        grid-column: span 4;
+        grid-row: span 4;
+      }
+      li:nth-child(10) {
+        background-color: yellow;
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      li:nth-child(11) {
+        background-color: red;
+        grid-column: span 2;
+        grid-row: span 2;
+        grid-column-start: 8;
+        grid-column-end: 10;
+      }
+      li:nth-child(12) {
+        background-color: yellow;
+        grid-column: span 1;
+        grid-area: 2 / 10 / 3 / 12;
+      }
+      li:nth-child(13) {
+        background-color: black;
+        grid-column: span 2;
+      }
+      li:nth-child(14) {
+        background-color: white;
+        grid-column: span 2;
+        grid-row: span 2;
+        grid-area: 2/ 12/ 4 / 14;
+      }
+      /* 3. row */
+
+      li:nth-child(15) {
+        background-color: white;
+        grid-row: span 3;
+      }
+      li:nth-child(17) {
+        background-color: white;
+        grid-area: 4 /6/ 6/7;
+      }
+      li:nth-child(18) {
+        background-color: white;
+        grid-area: 4 /7/ 6/8;
+      }
+      li:nth-child(19) {
+        background-color: white;
+        grid-area: 5 /8/ 6/10;
+      }
+      li:nth-child(20) {
+        background-color: white;
+        grid-column: span 2;
+        grid-area: 4 /10/ 5/12;
+      }
+      li:nth-child(21) {
+        background-color: white;
+        grid-area: 5 /10/ 6/12;
+      }
+      li:nth-child(22) {
+        background-color: black;
+        grid-area: 4 /12/ 6/14;
+      }
+
+      /* 4. row */
+      li:nth-child(23) {
+        background-color: black;
+        grid-area: 6 /2/ 8/4;
+      }
+      li:nth-child(24) {
+        background-color: white;
+        grid-area: 6/4/7/6;
+      }
+      li:nth-child(25) {
+        background-color: white;
+        grid-area: 7/4/8/6;
+      }
+      li:nth-child(26) {
+        background-color: white;
+        grid-area: 6/6/7/8;
+      }
+
+      li:nth-child(27) {
+        background-color: blue;
+        grid-area: 7 /6/ 9/8;
+      }
+      li:nth-child(28) {
+        background-color: white;
+        grid-area: 6 /8/ 8/9;
+      }
+      li:nth-child(29) {
+        background-color: white;
+        grid-area: 6 /9/ 8/10;
+      }
+      li:nth-child(30) {
+        background-color: blue;
+        grid-area: 6 /10/ 10/14;
+      }
+
+      /* 5. row */
+      li:nth-child(31) {
+        background-color: yellow;
+        grid-area: 7 /1/ 10/2;
+      }
+      li:nth-child(32) {
+        background-color: white;
+        grid-area: 8 /2/ 10/4;
+      }
+      li:nth-child(33) {
+        background-color: black;
+        /* grid-area: 7/4/8/6; */
+        grid-column-start: 4;
+        grid-column: span 2;
+        grid-row-start: 8;
+      }
+      li:nth-child(34) {
+        background-color: white;
+        grid-area:10/1/11/4;
+
+      }
+      li:nth-child(35) {
+        background-color: yellow;
+        grid-row: 9 /11;
+
+      }
+      li:nth-child(36) {
+        background-color: red;
+        grid-column: span 2;
+        grid-row: span 2;
+        grid-area:  9/6/ 11/8;
+      }
+      li:nth-child(37) {
+        background-color: yellow;
+        grid-area: 8 /8/ 10/10;
+      }
+      /* 6. row */
+      li:nth-child(38) {
+        background-color: white;
+        grid-row: 9 /11;
+      }
+      li:nth-child(39) {
+        background-color: white;
+        /* grid-column: 8/10 */
+        grid-area: 10 /8/ 10/9;
+      }
+      li:nth-child(40) {
+        background-color: black;
+        grid-area: 10/9/11/10;
+      }
+      li:nth-child(41) {
+        background-color: white;
+        grid-area: 10/10/11/13;
+        /* grid-row: span 2;
+        grid-row-start: 9; */
+      }
+      li:last-child {
+        background-color: white;
+        grid-area: 10/13/11/14;
+        /* grid-row: span 2;
+        grid-row-start: 9; */
+
+      }
+     
+    </style>
+  </head>
+
+  <body>
+    <ul class="container">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </body>
+</html>
